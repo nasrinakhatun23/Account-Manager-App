@@ -37,42 +37,44 @@ function Account() {
   if (!user) return null;
 
   return (
-    <div className="col-md-6 offset-md-3">
-      <h3 className="text-center mb-4">My Account</h3>
-      <div className="mb-3">
-        <label>Name</label>
-        <input
-          name="name"
-          className="form-control"
-          value={user.name}
-          onChange={handleChange}
-        />
+    <div className="container d-flex justify-content-center">
+      <div className="col-md-6 auth-container">
+        <h3 className="text-center mb-4">My Account</h3>
+        <div className="mb-3">
+          <label>Name</label>
+          <input
+            name="name"
+            className="form-control"
+            value={user.name}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="mb-3">
+          <label>Email (read only)</label>
+          <input
+            name="email"
+            className="form-control"
+            value={user.email}
+            readOnly
+          />
+        </div>
+        <div className="mb-3">
+          <label>Password</label>
+          <input
+            name="password"
+            type="password"
+            className="form-control"
+            value={user.password}
+            onChange={handleChange}
+          />
+        </div>
+        <button onClick={handleSave} className="btn auth-btn w-100 mb-2">
+          Save Changes
+        </button>
+        <button onClick={handleLogout} className="btn btn-danger w-100">
+          Logout
+        </button>
       </div>
-      <div className="mb-3">
-        <label>Email (read only)</label>
-        <input
-          name="email"
-          className="form-control"
-          value={user.email}
-          readOnly
-        />
-      </div>
-      <div className="mb-3">
-        <label>Password</label>
-        <input
-          name="password"
-          type="password"
-          className="form-control"
-          value={user.password}
-          onChange={handleChange}
-        />
-      </div>
-      <button onClick={handleSave} className="btn btn-primary w-100 mb-2">
-        Save Changes
-      </button>
-      <button onClick={handleLogout} className="btn btn-danger w-100">
-        Logout
-      </button>
     </div>
   );
 }

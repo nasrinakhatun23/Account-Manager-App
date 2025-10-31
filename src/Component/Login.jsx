@@ -21,28 +21,35 @@ function Login() {
   };
 
   return (
-    <div className="col-md-6 offset-md-3">
-      <h3 className="text-center mb-4">Login</h3>
-      <form onSubmit={handleLogin}>
-        <input
-          type="email"
-          className="form-control mb-3"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          className="form-control mb-3"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit" className="btn btn-success w-100">Login</button>
-      </form>
-      <p className="mt-3 text-center">
-        Don’t have an account? <a href="/register">Register</a>
-      </p>
+    <div className="container d-flex justify-content-center">
+      <div className="col-md-5 auth-container">
+        <h3 className="text-center mb-4">Login</h3>
+        <form onSubmit={handleLogin}>
+          <input
+            type="email"
+            className="form-control mb-3"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            className="form-control mb-3"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button type="submit" className="btn auth-btn w-100">
+            Login
+          </button>
+        </form>
+        <p className="mt-3 text-center">
+          Don't have an account?{" "}
+          <a href="/register" className="auth-link">
+            Register New Account
+          </a>
+        </p>
+      </div>
     </div>
   );
 }
