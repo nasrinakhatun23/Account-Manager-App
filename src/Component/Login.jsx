@@ -16,7 +16,7 @@ function Login() {
       alert("Login successful!");
       navigate("/account");
     } else {
-      alert("Invalid credentials");
+      alert("No account found. Please register first");
     }
   };
 
